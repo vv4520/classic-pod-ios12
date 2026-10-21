@@ -1,1 +1,1 @@
-{"name":"Classic Pod","short_name":"Classic Pod","start_url":"./","scope":"./","display":"browser","background_color":"#c8c9cb","theme_color":"#c8c9cb","icons":[{"src":"icon.png","sizes":"180x180","type":"image/png"},{"src":"icon-512.png","sizes":"512x512","type":"image/png"}]}
+{"name":"Classic Pod","short_name":"Classic Pod","start_url":"./","scope":"./","display":"standalone","background_color":"#c8c9cb","theme_color":"#c8c9cb","icons":[{"src":"icon.png","sizes":"180x180","type":"image/png"},{"src":"icon-512.png","sizes":"512x512","type":"image/png"}]}
