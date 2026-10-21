@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="no">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Classic Pod">
   <meta name="theme-color" content="#c8c9cb">
   <meta name="description" content="为 iOS 12 准备的经典转盘本地音乐播放器。">
   <link rel="apple-touch-icon" href="icon.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="style.css?v=0.2.0">
+  <link rel="manifest" href="manifest.webmanifest?v=0.3.0">
+  <link rel="stylesheet" href="style.css?v=0.3.0">
   <title>Classic Pod</title>
 </head>
 <body>
@@ -39,18 +39,19 @@
     <button id="close-dialog" class="close" aria-label="关闭">×</button>
     <h1 id="dialog-title">把音乐装进口袋</h1>
     <p>选择音乐文件，保存在这台设备的浏览器中。音乐不会上传。</p>
-    <p class="release-note">0.2 · 主屏幕导入兼容版</p>
+    <p class="release-note">0.3 · Safari 后台播放入口</p>
+    <p id="launch-mode" class="file-picker-help"></p>
     <label class="file-label" for="files">批量选择音乐文件</label>
     <input id="files" class="native-file-input" type="file" multiple aria-describedby="file-picker-help">
     <p id="file-picker-help" class="file-picker-help">点系统的「选择文件」按钮。若没有弹出文件列表，请试下面的单首导入；也可彻底退出桌面播放器后重新打开。</p>
     <label class="file-label" for="files-single">单首导入（兼容模式）</label>
     <input id="files-single" class="native-file-input" type="file">
     <p id="import-state" class="import-state" role="status" aria-live="polite"></p>
-    <details open><summary>在 iPhone 5S 上使用</summary><p>用 Safari 打开网页 → 分享 → 添加到主屏幕。<b>先从主屏幕打开，再导入音乐</b>，因为 Safari 与主屏幕版本的资料库可能分开。</p><p id="offline-state">正在检查离线状态…</p></details>
+    <details open><summary>在 iPhone 5S 上使用</summary><p>用 Safari 打开网页，确认本页显示 0.3 → 分享 → 添加到主屏幕，名称可写「Classic Pod 0.3」。<b>新图标通过 Safari 打开，以便回到桌面后继续播放。</b>旧独立版图标不会自动改变，请先保留；两种模式的音乐库可能分开，需要时在 Safari 重新导入原文件。</p><p id="offline-state">正在检查离线状态…</p></details>
     <details><summary>转盘怎么用</summary><p>转圈选择，中心键进入，MENU 返回。长按 MENU 回主菜单。底部播放 / 暂停；左右切歌，长按快进 / 快退。播放页按中心键切换到进度调节，再转动转盘。iOS 音量请用手机侧边按键。</p></details>
     <details><summary>音乐格式与专辑封面</summary><p>优先使用 MP3、AAC / M4A、PCM WAV。FLAC、AIFF 等是否可播取决于当前设备。OGG、Opus、WMA、APE 等建议先在电脑转换成 AAC / MP3。文件扩展名不能保证内部编码受支持。</p><p>自动读取 MP3、M4A、FLAC 等文件中可识别的标题、歌手、专辑与内嵌封面；无封面时显示唱片图案。此网页不能扫描系统「音乐」App 的资料库，需从「文件」选择文件。</p></details>
-    <details><summary>离线与锁屏的边界</summary><p>离线首次准备需要 HTTPS，或本机 localhost。普通局域网 HTTP 可以试听，但不能保证关闭后断网重开。音乐保存在浏览器中，清除网站数据、系统回收空间或删除主屏幕 App 都可能使它丢失；请保留原文件。</p><p>iOS 12 可能暂停后台网页，锁屏播放与自动接下一首需要用你的 5S 实测。此版本复刻音乐浏览与转盘交互，未包含原机的视频、照片、游戏或硬件同步功能。</p></details>
-    <details><summary>资料库与版本</summary><p id="library-state"></p><p>Classic Pod 0.2 · 主屏幕导入兼容版。离线读取标签使用 jsmediatags 3.9.7（BSD-3-Clause）。本项目与 Apple 无关联。</p><button id="reload-app" type="button" class="reload-app">检查更新并重新载入</button><p id="update-state" role="status"></p></details>
+    <details><summary>离线与锁屏的边界</summary><p>离线首次准备需要 HTTPS，或本机 localhost。普通局域网 HTTP 可以试听，但不能保证关闭后断网重开。音乐保存在浏览器中，清除网站数据、系统回收空间或删除主屏幕 App 都可能使它丢失；请保留原文件。</p><p>iOS 12 的独立桌面网页退出后会停止音频。请使用 Safari 模式；它会显示浏览器工具栏。已收到 5S 用户反馈：Safari 中播放后回桌面可以继续。锁屏和后台连续接下一首仍需实际验证；不要从多任务界面划掉 Safari。此版本复刻音乐浏览与转盘交互，未包含原机的视频、照片、游戏或硬件同步功能。</p></details>
+    <details><summary>资料库与版本</summary><p id="library-state"></p><p>Classic Pod 0.3 · Safari 后台播放入口。离线读取标签使用 jsmediatags 3.9.7（BSD-3-Clause）。本项目与 Apple 无关联。</p><button id="reload-app" type="button" class="reload-app">检查更新并重新载入</button><p id="update-state" role="status"></p></details>
   </section>
 </div>
 <div id="playlist-dialog" class="overlay" hidden>
@@ -63,6 +64,6 @@
 </div>
 <audio id="audio" preload="metadata" playsinline webkit-playsinline></audio>
 <script src="vendor/jsmediatags.min.js"></script>
-<script src="app.js?v=0.2.0"></script>
+<script src="app.js?v=0.3.0"></script>
 </body>
 </html>
