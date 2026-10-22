@@ -1,7 +1,7 @@
 /* App updates never delete the IndexedDB music library. */
-var RELEASE = '0.7.0';
-var CACHE = 'classic-pod-shell-v13';
-var ASSETS = ['./','./index.html','./style.css','./fill-layout.css','./fill-layout.js','./app.js','./vendor/jsmediatags.min.js','./manifest.webmanifest','./icon.png','./icon-512.png','./immersive.html','./immersive.css','./immersive.js','./immersive.webmanifest','./metadata.html','./metadata.js','./app-metadata.js','./metadata-config.js','./metadata.css','./vendor/chinese-normalize.js','./vendor/OpenCC-LICENSE.txt'];
+var RELEASE = '0.7.1';
+var CACHE = 'classic-pod-shell-v14';
+var ASSETS = ['./','./index.html','./style.css','./fill-layout.css','./fill-layout.js','./app.js','./vendor/jsmediatags.min.js','./manifest.webmanifest','./icon.png','./icon-512.png','./immersive.html','./immersive.css','./immersive.js','./immersive.webmanifest','./metadata.html','./metadata.js','./app-metadata.js','./metadata-config.js','./metadata.css','./metadata.webmanifest','./audio-local.js','./vendor/chinese-normalize.js','./vendor/OpenCC-LICENSE.txt'];
 var URLS = ASSETS.map(function(path){return new URL(path,self.location.href).href;});
 self.addEventListener('install',function(event){
   event.waitUntil(caches.open(CACHE).then(function(cache){
