@@ -26,7 +26,7 @@ jobs:
       - name: Prepare player assets
         run: |
           mkdir _site
-          cp index.html app.js style.css sw.js manifest.webmanifest immersive.html immersive.css immersive.js immersive.webmanifest system-playback.js icon.png icon-512.png _site/
+          cp index.html app.js style.css sw.js manifest.webmanifest immersive.html immersive.css immersive.js immersive.webmanifest icon.png icon-512.png _site/
           cp -R vendor _site/
       - uses: actions/upload-pages-artifact@v4
         with:

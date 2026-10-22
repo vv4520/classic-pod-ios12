@@ -8,8 +8,7 @@
     scheduled=false;
     var height=window.innerHeight||document.documentElement.clientHeight;
     stage.style.height=height+'px';
-    var reserve=window.ClassicPodSystemPlayback&&window.ClassicPodSystemPlayback.enabled?112:38;
-    stage.className=(height-reserve<470?'compact':'')+(height-reserve<350?' short':'');
+    stage.className=(height-38<470?'compact':'')+(height-38<350?' short':'');
   }
   function schedule(){if(!scheduled){scheduled=true;window.requestAnimationFrame(fit);}}
   function explain(){tip.textContent=window.pageYOffset>15?'向下滑可展开工具栏 · 上滑可再次收起':'在这条空白区域上滑，尝试收起 Safari 工具栏';}
