@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Classic Pod">
+  <meta name="theme-color" content="#c8c9cb">
+  <meta name="description" content="为 iOS 12–16 准备的经典转盘本地音乐播放器。">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="manifest.webmanifest?v=0.7.0">
+  <link rel="stylesheet" href="style.css?v=0.7.0">
+  <link rel="stylesheet" href="fill-layout.css?v=0.7.0">
+  <link rel="stylesheet" href="metadata.css?v=0.7.0">
+  <title>Classic Pod · 资料补全试用</title>
+</head>
+<body class="classic-fill">
+<div id="classic-stage"><div id="classic-frame">
+<main id="device" class="device" aria-label="Classic Pod 音乐播放器">
+  <div class="hold-mark" aria-hidden="true"><span></span></div>
+  <section class="bezel">
+    <div class="lcd">
+      <header class="status"><span id="play-state" aria-label="播放状态">Ⅱ</span><strong id="screen-title">iPod</strong><span id="mode-state"></span></header>
+      <div id="screen" class="screen"></div>
+    </div>
+  </section>
+  <div class="wheel-wrap">
+    <div id="wheel" class="wheel" aria-label="沿转盘顺时针或逆时针滑动以选择">
+      <button id="menu" class="wheel-key menu" aria-label="返回上一级；长按返回主菜单">MENU</button>
+      <button id="previous" class="wheel-key previous" aria-label="上一首；长按快退"><svg viewBox="0 0 30 22" aria-hidden="true"><path d="M3 3h3v16H3zm4 8L17 3v16zm10 0L27 3v16z"/></svg></button>
+      <button id="next" class="wheel-key next" aria-label="下一首；长按快进"><svg viewBox="0 0 30 22" aria-hidden="true"><path d="M24 3h3v16h-3zM13 3l10 8-10 8zM3 3l10 8-10 8z"/></svg></button>
+      <button id="play" class="wheel-key play" aria-label="播放或暂停"><svg viewBox="0 0 30 22" aria-hidden="true"><path d="M3 3l11 8-11 8zm15 0h4v16h-4zm7 0h4v16h-4z"/></svg></button>
+      <button id="select" class="center" aria-label="选择；播放界面按下切换进度调节"></button>
+    </div>
+  </div>
+  <div class="device-foot"><span>Classic Pod</span><button id="help" aria-label="导入音乐与使用说明">导入 / 帮助</button></div>
+</main>
+</div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="dialog" class="overlay" hidden>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+    <button id="close-dialog" class="close" aria-label="关闭">×</button>
+    <h1 id="dialog-title">把音乐装进口袋</h1>
+    <p>选择音乐文件，保存在这台设备的浏览器中。音乐不会上传。</p>
+    <p class="release-note">0.7.0 · 资料补全试用版</p>
+    <p id="launch-mode" class="file-picker-help"></p>
+    <p>导入后自动补缺失资料。优先维基百科，固定以网易云补缺项；只查询文字，不上传音频。可在设置关闭。</p><p id="metadata-state" role="status"></p>
+    <button id="metadata-all" class="reload-app" type="button">为资料库补全资料</button>
+    <label class="file-label" for="files">批量选择音乐文件</label>
+    <input id="files" class="native-file-input" type="file" multiple aria-describedby="file-picker-help">
+    <p id="file-picker-help" class="file-picker-help">点系统的「选择文件」按钮。若没有弹出文件列表，请试下面的单首导入；也可彻底退出桌面播放器后重新打开。</p>
+    <label class="file-label" for="files-single">单首导入（兼容模式）</label>
+    <input id="files-single" class="native-file-input" type="file">
+    <p id="import-state" class="import-state" role="status" aria-live="polite"></p>
+    <details open><summary>在 Home 键 iPhone 上使用</summary><p>兼容目标为 iOS 12–16，涵盖 iPhone 5S、6 / 6 Plus、6s / 6s Plus、7 / 7 Plus、8 / 8 Plus，以及此范围内的 SE。竖屏时机身铺满可用画面，转盘保持正圆；横屏时整体缩小以显示全部按键。</p><p>用 Safari 打开本页 → 分享 → 添加到主屏幕，可创建无地址栏的全屏入口。不同模式的音乐库可能分开，请保留音乐原文件。iOS 17 及以上暂列扩展验证范围。</p><p id="offline-state">正在检查离线状态…</p></details>
+    <details><summary>转盘怎么用</summary><p>转圈选择，中心键进入，MENU 返回。长按 MENU 回主菜单。底部播放 / 暂停；左右切歌，长按快进 / 快退。播放页按中心键切换到进度调节，再转动转盘。iOS 音量请用手机侧边按键。</p></details>
+    <details><summary>音乐格式与专辑封面</summary><p>优先使用 MP3、AAC / M4A、PCM WAV。FLAC、AIFF 等是否可播取决于当前设备。OGG、Opus、WMA、APE 等建议先在电脑转换成 AAC / MP3。文件扩展名不能保证内部编码受支持。</p><p>自动读取 MP3、M4A、FLAC 等文件中可识别的标题、歌手、专辑与内嵌封面；无封面时显示唱片图案。此网页不能扫描系统「音乐」App 的资料库，需从「文件」选择文件。</p></details>
+    <details><summary>离线与锁屏的边界</summary><p>离线首次准备需要 HTTPS，或本机 localhost。普通局域网 HTTP 可以试听，但不能保证关闭后断网重开。音乐保存在浏览器中，清除网站数据、系统回收空间或删除主屏幕 App 都可能使它丢失；请保留原文件。</p><p>5S / iOS 12 已收到反馈：Safari 播放时锁屏可继续；按 Home 若暂停，从底边上滑打开控制中心，点播放后可继续。此为手动续播办法。独立桌面版和不同系统的后台表现仍需真机确认，不能保证自动续播或连续接曲。此版本复刻音乐浏览与转盘交互，未包含原机的视频、照片、游戏或硬件同步功能。</p></details>
+    <details><summary>歌曲资料与歌词</summary><p>播放页按两次中心键进入歌词，再按中心键或 MENU 返回。设置中的「歌曲资料」可修正搜索、选择匹配或导入本地 LRC。自动补全不覆盖已有标签、封面或歌词；查不到会留空。已保存的资料可随本地歌曲离线显示。</p><p>这是资料补全试用版，原来的0.6.3入口保留。公开资料接口的可访问性不代表已取得商用授权。</p></details>
+    <details><summary>资料库与版本</summary><p id="library-state"></p><p>Classic Pod 0.7.0 · 资料补全试用版。离线读取标签使用 jsmediatags 3.9.7（BSD-3-Clause）。本项目与 Apple 无关联。</p><button id="reload-app" type="button" class="reload-app">检查更新并重新载入</button><p id="update-state" role="status"></p></details>
+  </section>
+</div>
+<div id="playlist-dialog" class="overlay" hidden>
+  <form id="playlist-form" class="sheet" role="dialog" aria-modal="true" aria-labelledby="playlist-title">
+    <h1 id="playlist-title">新建播放列表</h1>
+    <label for="playlist-name">名称</label>
+    <input id="playlist-name" class="name-input" type="text" maxlength="80" autocomplete="off" required>
+    <div class="form-actions"><button id="playlist-cancel" type="button">取消</button><button type="submit">创建</button></div>
+  </form>
+</div>
+<div id="metadata-dialog" class="overlay" hidden><section class="sheet" role="dialog" aria-modal="true" aria-labelledby="metadata-title"><button id="metadata-close" class="close" aria-label="关闭歌曲资料">×</button><h1 id="metadata-title">歌曲资料</h1><p id="metadata-existing"></p><label for="metadata-song">歌名</label><input id="metadata-song" class="name-input" maxlength="120"><label for="metadata-artist">演出者</label><input id="metadata-artist" class="name-input" maxlength="120"><button id="metadata-search" class="reload-app" type="button">查找匹配</button><p id="metadata-result-state" role="status"></p><div id="metadata-results"></div><p id="metadata-source"></p><label class="file-label" for="lyrics-file">为当前歌曲导入本地歌词（LRC / TXT）</label><input id="lyrics-file" class="native-file-input" type="file"><p>自动补全保留原有资料。手动选择匹配会更新显示的歌名、歌手与专辑；保留已有封面和歌词。音乐原文件不会被改写。</p></section></div>
+<audio id="audio" preload="metadata" playsinline webkit-playsinline></audio>
+<script src="vendor/jsmediatags.min.js"></script>
+<script src="fill-layout.js?v=0.7.0"></script>
+<script src="vendor/chinese-normalize.js"></script>
+<script src="metadata-config.js?v=0.7.0"></script>
+<script src="metadata.js?v=0.7.0"></script>
+<script src="app-metadata.js?v=0.7.0"></script>
+</body>
+</html>
