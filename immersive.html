@@ -9,9 +9,9 @@
   <meta name="theme-color" content="#c8c9cb">
   <meta name="description" content="为 iOS 12 准备的经典转盘本地音乐播放器。">
   <link rel="apple-touch-icon" href="icon.png">
-  <link rel="manifest" href="immersive.webmanifest?v=0.6.2">
-  <link rel="stylesheet" href="style.css?v=0.6.2">
-  <link rel="stylesheet" href="immersive.css?v=0.6.2">
+  <link rel="manifest" href="immersive.webmanifest?v=0.6.3">
+  <link rel="stylesheet" href="style.css?v=0.6.3">
+  <link rel="stylesheet" href="immersive.css?v=0.6.3">
   <title>Classic Pod · Safari 沉浸版</title>
 </head>
 <body data-mode="immersive">
@@ -44,7 +44,7 @@
     <button id="close-dialog" class="close" aria-label="关闭">×</button>
     <h1 id="dialog-title">把音乐装进口袋</h1>
     <p>选择音乐文件，保存在这台设备的浏览器中。音乐不会上传。</p>
-    <p class="release-note">0.6.2 · Safari 沉浸版</p>
+    <p class="release-note">0.6.3 · Safari 沉浸版</p>
     <p>已恢复你先前验证可用的播放方式。按 Home 停止后，在控制中心点一次播放即可继续。</p>
     <p id="launch-mode" class="file-picker-help"></p>
     <p>关闭此面板后，在播放器下方灰色提示条上向上滑动，尝试收起工具栏。请不要在转盘上滑动来收起工具栏。</p>
@@ -58,7 +58,7 @@
     <details><summary>转盘怎么用</summary><p>转圈选择，中心键进入，MENU 返回。长按 MENU 回主菜单。底部播放 / 暂停；左右切歌，长按快进 / 快退。播放页按中心键切换到进度调节，再转动转盘。iOS 音量请用手机侧边按键。</p></details>
     <details><summary>音乐格式与专辑封面</summary><p>优先使用 MP3、AAC / M4A、PCM WAV。FLAC、AIFF 等是否可播取决于当前设备。OGG、Opus、WMA、APE 等建议先在电脑转换成 AAC / MP3。文件扩展名不能保证内部编码受支持。</p><p>自动读取 MP3、M4A、FLAC 等文件中可识别的标题、歌手、专辑与内嵌封面；无封面时显示唱片图案。此网页不能扫描系统「音乐」App 的资料库，需从「文件」选择文件。</p></details>
     <details><summary>离线与锁屏的边界</summary><p>离线首次准备需要 HTTPS，或本机 localhost。普通局域网 HTTP 可以试听，但不能保证关闭后断网重开。音乐保存在浏览器中，清除网站数据、系统回收空间或删除主屏幕 App 都可能使它丢失；请保留原文件。</p><p>已收到 5S / iOS 12 用户反馈：独立桌面版回到桌面会停止，Safari 中可继续。此入口仍在 Safari 中运行，只尝试通过滚动缩小工具栏；不会为独立桌面版增加后台权限。已收到 5S 反馈：沉浸版锁屏可继续播放；按 Home 会暂停，但控制中心点播放后可以保持后台播放。尚未实现切回桌面全程不中断，后台连续接曲仍待验证。此版本复刻音乐浏览与转盘交互，未包含原机的视频、照片、游戏或硬件同步功能。</p></details>
-    <details><summary>资料库与版本</summary><p id="library-state"></p><p>Classic Pod 0.6.2 · Safari 沉浸版。离线读取标签使用 jsmediatags 3.9.7（BSD-3-Clause）。本项目与 Apple 无关联。</p><button id="reload-app" type="button" class="reload-app">检查更新并重新载入</button><p id="update-state" role="status"></p></details>
+    <details><summary>资料库与版本</summary><p id="library-state"></p><p>Classic Pod 0.6.3 · Safari 沉浸版。离线读取标签使用 jsmediatags 3.9.7（BSD-3-Clause）。本项目与 Apple 无关联。</p><button id="reload-app" type="button" class="reload-app">检查更新并重新载入</button><p id="update-state" role="status"></p></details>
   </section>
 </div>
 <div id="playlist-dialog" class="overlay" hidden>
@@ -70,8 +70,8 @@
   </form>
 </div>
 <audio id="audio" preload="metadata" playsinline webkit-playsinline></audio>
-<script src="immersive.js?v=0.6.2"></script>
+<script src="immersive.js?v=0.6.3"></script>
 <script src="vendor/jsmediatags.min.js"></script>
-<script src="app.js?v=0.6.2"></script>
+<script src="app.js?v=0.6.3"></script>
 </body>
 </html>

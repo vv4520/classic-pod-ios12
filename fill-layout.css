@@ -1,0 +1,30 @@
+/* Restore the accepted filled portrait shell; keep the wheel circular. */
+body.classic-fill{background:#c8c9cb;display:block}
+#classic-stage{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#c8c9cb}
+#classic-frame{position:relative;width:100%;height:100%;flex-shrink:0}
+body.classic-fill .device{position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;max-height:none;border-radius:0;padding:22px 22px 7px;transform-origin:0 0;box-shadow:inset 0 1px 2px #fff,inset -1px 0 2px #777}
+body.classic-fill .bezel{height:43%}
+body.classic-fill .wheel-wrap{height:calc(57% - 22px)}
+body.classic-fill .wheel{width:222px;height:222px}
+body.classic-fill .device-foot{position:absolute;bottom:5px;left:26px;right:26px}
+body.classic-fill .row{height:28px}
+body.classic-fill .now-body{height:calc(100% - 53px)}
+body.classic-fill .now-body .cover{width:105px;height:105px}
+body.classic-fill .flow-cover{top:22px;width:112px;height:112px;margin-left:-56px}
+body.classic-fill .flow-caption{bottom:12px}
+body.classic-fill .preview .cover{top:32px}
+@media(max-height:500px){body.classic-fill .device{padding-top:12px}body.classic-fill .bezel{height:45%}body.classic-fill .wheel-wrap{height:calc(55% - 16px)}body.classic-fill .row{height:25px}body.classic-fill .now-body .cover{width:80px;height:80px}body.classic-fill .flow-cover{width:87px;height:87px;margin-left:-43px;top:10px}}
+/* A sideways phone still shows all controls, rather than cropping the bottom. */
+#classic-stage.fit-landscape{background:#26282b}
+#classic-stage.fit-landscape .device{width:320px;height:536px;padding:23px 22px 11px;border-radius:29px}
+#classic-stage.fit-landscape .hold-mark{top:8px}
+#classic-stage.fit-landscape .bezel{height:220px}
+#classic-stage.fit-landscape .wheel-wrap{height:249px}
+#classic-stage.fit-landscape .wheel{width:220px;height:220px;transform:none}
+#classic-stage.fit-landscape .device-foot{position:static;left:auto;right:auto;bottom:auto}
+#classic-stage.fit-landscape .row{height:27px}
+#classic-stage.fit-landscape .now-body{height:106px}
+#classic-stage.fit-landscape .now-body .cover{width:99px;height:99px}
+#classic-stage.fit-landscape .flow-cover{top:17px;width:106px;height:106px;margin-left:-53px}
+#classic-stage.fit-landscape .flow-caption{bottom:7px}
+#classic-stage.fit-landscape .preview .cover{top:22px}

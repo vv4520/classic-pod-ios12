@@ -6,15 +6,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Classic Pod">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#c8c9cb">
   <meta name="description" content="为 iOS 12–16 准备的经典转盘本地音乐播放器。">
   <link rel="apple-touch-icon" href="icon.png">
-  <link rel="manifest" href="manifest.webmanifest?v=0.6.2">
-  <link rel="stylesheet" href="style.css?v=0.6.2">
-  <link rel="stylesheet" href="fixed-layout.css?v=0.6.2">
+  <link rel="manifest" href="manifest.webmanifest?v=0.6.3">
+  <link rel="stylesheet" href="style.css?v=0.6.3">
+  <link rel="stylesheet" href="fill-layout.css?v=0.6.3">
   <title>Classic Pod</title>
 </head>
-<body class="classic-fixed">
+<body class="classic-fill">
 <div id="classic-stage"><div id="classic-frame">
 <main id="device" class="device" aria-label="Classic Pod 音乐播放器">
   <div class="hold-mark" aria-hidden="true"><span></span></div>
@@ -42,7 +42,7 @@
     <button id="close-dialog" class="close" aria-label="关闭">×</button>
     <h1 id="dialog-title">把音乐装进口袋</h1>
     <p>选择音乐文件，保存在这台设备的浏览器中。音乐不会上传。</p>
-    <p class="release-note">0.6.2 · 等比兼容版</p>
+    <p class="release-note">0.6.3 · 铺满兼容版</p>
     <p id="launch-mode" class="file-picker-help"></p>
     <label class="file-label" for="files">批量选择音乐文件</label>
     <input id="files" class="native-file-input" type="file" multiple aria-describedby="file-picker-help">
@@ -50,11 +50,11 @@
     <label class="file-label" for="files-single">单首导入（兼容模式）</label>
     <input id="files-single" class="native-file-input" type="file">
     <p id="import-state" class="import-state" role="status" aria-live="polite"></p>
-    <details open><summary>在 Home 键 iPhone 上使用</summary><p>兼容目标为 iOS 12–16，涵盖 iPhone 5S、6 / 6 Plus、6s / 6s Plus、7 / 7 Plus、8 / 8 Plus，以及此范围内的 SE。机身固定比例等比缩放，空余区域显示黑色。</p><p>用 Safari 打开本页 → 分享 → 添加到主屏幕，可创建无地址栏的全屏入口。不同模式的音乐库可能分开，请保留音乐原文件。iOS 17 及以上暂列扩展验证范围。</p><p id="offline-state">正在检查离线状态…</p></details>
+    <details open><summary>在 Home 键 iPhone 上使用</summary><p>兼容目标为 iOS 12–16，涵盖 iPhone 5S、6 / 6 Plus、6s / 6s Plus、7 / 7 Plus、8 / 8 Plus，以及此范围内的 SE。竖屏时机身铺满可用画面，转盘保持正圆；横屏时整体缩小以显示全部按键。</p><p>用 Safari 打开本页 → 分享 → 添加到主屏幕，可创建无地址栏的全屏入口。不同模式的音乐库可能分开，请保留音乐原文件。iOS 17 及以上暂列扩展验证范围。</p><p id="offline-state">正在检查离线状态…</p></details>
     <details><summary>转盘怎么用</summary><p>转圈选择，中心键进入，MENU 返回。长按 MENU 回主菜单。底部播放 / 暂停；左右切歌，长按快进 / 快退。播放页按中心键切换到进度调节，再转动转盘。iOS 音量请用手机侧边按键。</p></details>
     <details><summary>音乐格式与专辑封面</summary><p>优先使用 MP3、AAC / M4A、PCM WAV。FLAC、AIFF 等是否可播取决于当前设备。OGG、Opus、WMA、APE 等建议先在电脑转换成 AAC / MP3。文件扩展名不能保证内部编码受支持。</p><p>自动读取 MP3、M4A、FLAC 等文件中可识别的标题、歌手、专辑与内嵌封面；无封面时显示唱片图案。此网页不能扫描系统「音乐」App 的资料库，需从「文件」选择文件。</p></details>
     <details><summary>离线与锁屏的边界</summary><p>离线首次准备需要 HTTPS，或本机 localhost。普通局域网 HTTP 可以试听，但不能保证关闭后断网重开。音乐保存在浏览器中，清除网站数据、系统回收空间或删除主屏幕 App 都可能使它丢失；请保留原文件。</p><p>5S / iOS 12 已收到反馈：Safari 播放时锁屏可继续；按 Home 若暂停，从底边上滑打开控制中心，点播放后可继续。此为手动续播办法。独立桌面版和不同系统的后台表现仍需真机确认，不能保证自动续播或连续接曲。此版本复刻音乐浏览与转盘交互，未包含原机的视频、照片、游戏或硬件同步功能。</p></details>
-    <details><summary>资料库与版本</summary><p id="library-state"></p><p>Classic Pod 0.6.2 · 等比兼容版。离线读取标签使用 jsmediatags 3.9.7（BSD-3-Clause）。本项目与 Apple 无关联。</p><button id="reload-app" type="button" class="reload-app">检查更新并重新载入</button><p id="update-state" role="status"></p></details>
+    <details><summary>资料库与版本</summary><p id="library-state"></p><p>Classic Pod 0.6.3 · 铺满兼容版。离线读取标签使用 jsmediatags 3.9.7（BSD-3-Clause）。本项目与 Apple 无关联。</p><button id="reload-app" type="button" class="reload-app">检查更新并重新载入</button><p id="update-state" role="status"></p></details>
   </section>
 </div>
 <div id="playlist-dialog" class="overlay" hidden>
@@ -67,7 +67,7 @@
 </div>
 <audio id="audio" preload="metadata" playsinline webkit-playsinline></audio>
 <script src="vendor/jsmediatags.min.js"></script>
-<script src="fixed-layout.js?v=0.6.2"></script>
-<script src="app.js?v=0.6.2"></script>
+<script src="fill-layout.js?v=0.6.3"></script>
+<script src="app.js?v=0.6.3"></script>
 </body>
 </html>
