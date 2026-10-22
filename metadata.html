@@ -9,10 +9,10 @@
   <meta name="theme-color" content="#c8c9cb">
   <meta name="description" content="为 iOS 12–16 准备的经典转盘本地音乐播放器。">
   <link rel="apple-touch-icon" href="icon.png">
-  <link rel="manifest" href="metadata.webmanifest?v=0.7.1">
-  <link rel="stylesheet" href="style.css?v=0.7.1">
-  <link rel="stylesheet" href="fill-layout.css?v=0.7.1">
-  <link rel="stylesheet" href="metadata.css?v=0.7.1">
+  <link rel="manifest" href="metadata.webmanifest?v=0.7.2">
+  <link rel="stylesheet" href="style.css?v=0.7.2">
+  <link rel="stylesheet" href="fill-layout.css?v=0.7.2">
+  <link rel="stylesheet" href="metadata.css?v=0.7.2">
   <title>Classic Pod · 资料补全试用</title>
 </head>
 <body class="classic-fill">
@@ -43,7 +43,7 @@
     <button id="close-dialog" class="close" aria-label="关闭">×</button>
     <h1 id="dialog-title">歌曲资料与音乐导入</h1>
     <p>选择音乐文件，保存在这台设备的浏览器中。音乐不会上传。</p>
-    <p class="release-note">0.7.1 · 资料补全试用版</p>
+    <p class="release-note">0.7.2 · 资料补全试用版</p>
     <p id="launch-mode" class="file-picker-help"></p>
     <p>导入后自动补缺失资料。优先维基百科，固定以网易云补缺项；只查询文字，不上传音频。可在设置关闭。</p><p id="metadata-state" role="status"></p>
     <button id="metadata-all" class="reload-app" type="button">补封面、歌手和歌词</button>
@@ -58,7 +58,7 @@
     <details><summary>音乐格式与专辑封面</summary><p>优先使用 MP3、AAC / M4A、PCM WAV。FLAC、AIFF 等是否可播取决于当前设备。OGG、Opus、WMA、APE 等建议先在电脑转换成 AAC / MP3。文件扩展名不能保证内部编码受支持。</p><p>自动读取 MP3、M4A、FLAC 等文件中可识别的标题、歌手、专辑与内嵌封面；无封面时显示唱片图案。此网页不能扫描系统「音乐」App 的资料库，需从「文件」选择文件。</p></details>
     <details><summary>离线与锁屏的边界</summary><p>离线首次准备需要 HTTPS，或本机 localhost。普通局域网 HTTP 可以试听，但不能保证关闭后断网重开。音乐保存在浏览器中，清除网站数据、系统回收空间或删除主屏幕 App 都可能使它丢失；请保留原文件。</p><p>5S / iOS 12 已收到反馈：Safari 播放时锁屏可继续；按 Home 若暂停，从底边上滑打开控制中心，点播放后可继续。此为手动续播办法。独立桌面版和不同系统的后台表现仍需真机确认，不能保证自动续播或连续接曲。此版本复刻音乐浏览与转盘交互，未包含原机的视频、照片、游戏或硬件同步功能。</p></details>
     <details><summary>歌曲资料与歌词</summary><p>播放页按两次中心键进入歌词，再按中心键或 MENU 返回。设置中的「歌曲资料」可修正搜索、选择匹配或导入本地 LRC。自动补全不覆盖已有标签、封面或歌词；查不到会留空。已保存的资料可随本地歌曲离线显示。</p><p>这是资料补全试用版，原来的0.6.3入口保留。公开资料接口的可访问性不代表已取得商用授权。</p></details>
-    <details><summary>资料库与版本</summary><p id="library-state"></p><p>Classic Pod 0.7.1 · 资料补全试用版。离线读取标签使用 jsmediatags 3.9.7（BSD-3-Clause）。本项目与 Apple 无关联。</p><button id="reload-app" type="button" class="reload-app">检查更新并重新载入</button><p id="update-state" role="status"></p></details>
+    <details><summary>资料库与版本</summary><p id="library-state"></p><p>Classic Pod 0.7.2 · 资料补全试用版。离线读取标签使用 jsmediatags 3.9.7（BSD-3-Clause）。本项目与 Apple 无关联。</p><button id="reload-app" type="button" class="reload-app">检查更新并重新载入</button><p id="update-state" role="status"></p></details>
   </section>
 </div>
 <div id="playlist-dialog" class="overlay" hidden>
@@ -72,11 +72,11 @@
 <div id="metadata-dialog" class="overlay" hidden><section class="sheet" role="dialog" aria-modal="true" aria-labelledby="metadata-title"><button id="metadata-close" class="close" aria-label="关闭歌曲资料">×</button><h1 id="metadata-title">歌曲资料</h1><p id="metadata-existing"></p><label for="metadata-song">歌名</label><input id="metadata-song" class="name-input" maxlength="120"><label for="metadata-artist">演出者</label><input id="metadata-artist" class="name-input" maxlength="120"><button id="metadata-search" class="reload-app" type="button">查找匹配</button><p id="metadata-result-state" role="status"></p><div id="metadata-results"></div><p id="metadata-source"></p><label class="file-label" for="lyrics-file">为当前歌曲导入本地歌词（LRC / TXT）</label><input id="lyrics-file" class="native-file-input" type="file"><p>自动补全保留原有资料。手动选择匹配会更新显示的歌名、歌手与专辑；保留已有封面和歌词。音乐原文件不会被改写。</p></section></div>
 <audio id="audio" preload="metadata" playsinline webkit-playsinline></audio>
 <script src="vendor/jsmediatags.min.js"></script>
-<script src="fill-layout.js?v=0.7.1"></script>
+<script src="fill-layout.js?v=0.7.2"></script>
 <script src="vendor/chinese-normalize.js"></script>
-<script src="metadata-config.js?v=0.7.1"></script>
-<script src="metadata.js?v=0.7.1"></script>
-<script src="audio-local.js?v=0.7.1"></script>
-<script src="app-metadata.js?v=0.7.1"></script>
+<script src="metadata-config.js?v=0.7.2"></script>
+<script src="metadata.js?v=0.7.2"></script>
+<script src="audio-local.js?v=0.7.2"></script>
+<script src="app-metadata.js?v=0.7.2"></script>
 </body>
 </html>
