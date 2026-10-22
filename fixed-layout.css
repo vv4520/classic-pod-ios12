@@ -1,0 +1,17 @@
+/* One physical device canvas. Old Safari does not need aspect-ratio or dynamic vh. */
+body.classic-fixed{background:#000;display:block}
+#classic-stage{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
+#classic-frame{position:relative;width:320px;height:536px;flex-shrink:0}
+body.classic-fixed .device{position:absolute;left:0;top:0;width:320px;height:536px;max-width:none;max-height:none;padding:23px 22px 11px;border-radius:29px;transform-origin:0 0;box-shadow:inset 0 2px 2px #fff,inset 2px 0 3px #fff9,inset -2px -2px 3px #62666c}
+body.classic-fixed .device.black{box-shadow:inset 0 2px 2px #888,inset -2px -2px 3px #000}
+body.classic-fixed .hold-mark{top:8px}
+body.classic-fixed .bezel{height:220px}
+body.classic-fixed .wheel-wrap{height:249px}
+body.classic-fixed .wheel{width:220px;height:220px;transform:none}
+body.classic-fixed .device-foot{position:static;left:auto;right:auto;bottom:auto}
+body.classic-fixed .row{height:27px}
+body.classic-fixed .now-body{height:106px}
+body.classic-fixed .now-body .cover{width:99px;height:99px}
+body.classic-fixed .flow-cover{top:17px;width:106px;height:106px;margin-left:-53px}
+body.classic-fixed .flow-caption{bottom:7px}
+body.classic-fixed .preview .cover{top:22px}
